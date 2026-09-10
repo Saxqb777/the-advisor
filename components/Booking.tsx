@@ -66,6 +66,7 @@ export default function Booking({
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
+  const [sentAs, setSentAs] = useState<Preference | "email">("whatsapp");
   const note = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -106,6 +107,7 @@ export default function Booking({
         }),
       });
       if (!response.ok) throw new Error("send failed");
+      setSentAs(channel === "email" ? "email" : preference);
       setBooked(true);
     } catch {
       setError(copy.form.errorSend);
@@ -297,7 +299,7 @@ export default function Booking({
             aria-live="polite"
           >
             <p className="font-display text-[clamp(1.75rem,4.2vw,2.75rem)] leading-[1.1]">
-              {copy.form.confirmation}
+              {copy.form.confirmation[sentAs]}
             </p>
           </div>
         </div>

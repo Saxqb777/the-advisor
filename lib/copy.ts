@@ -6,7 +6,7 @@
  */
 export const copy = {
   mark: "The Advisor",
-  place: "Abu Dhabi",
+  phone: "0545388662",
 
   hero: {
     lines: ["Something in your business", "is taking too long."],
@@ -44,7 +44,7 @@ export const copy = {
 
   form: {
     intro: "One line is enough. The real conversation happens in the session.",
-    problemLabel: "What is slow",
+    problemLabel: "Slow, broken, missing",
     reachLabel: "How should I reach you",
     phone: "Phone",
     email: "Email",
@@ -60,7 +60,11 @@ export const copy = {
     errorEmail: "Add an email so I can reach you.",
     errorSend: "That did not send. Try again in a moment.",
     sending: "Sending",
-    // Placeholder. This moment needs your words.
-    confirmation: "[CONFIRMATION LINE TBD]",
+    // Changes with how they asked to be reached.
+    confirmation: {
+      whatsapp: "Got it. I will message you on WhatsApp to set a time.",
+      call: "Got it. I will call you to set a time.",
+      email: "Got it. I will email you to set a time.",
+    },
   },
 } as const;

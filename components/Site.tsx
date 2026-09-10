@@ -14,9 +14,8 @@ export default function Site() {
 
   return (
     <main className="mx-auto w-full max-w-[1360px] px-6 md:px-10 lg:px-16">
-      <header className="flex items-baseline justify-between pt-8 text-label font-medium uppercase text-ink-40">
-        <span>{copy.mark}</span>
-        <span>{copy.place}</span>
+      <header className="pt-8 text-label font-medium uppercase text-ink-40">
+        {copy.mark}
       </header>
 
       <Hero problem={problem} setProblem={setProblem} />
@@ -33,7 +32,12 @@ export default function Site() {
         <div className="h-px w-full bg-rule" />
         <div className="flex items-baseline justify-between py-9 text-label font-medium uppercase text-ink-40">
           <span>{copy.mark}</span>
-          <span>{copy.place}</span>
+          <a
+            href={`tel:${copy.phone}`}
+            className="transition-colors duration-300 hover:text-accent"
+          >
+            {copy.phone}
+          </a>
         </div>
       </footer>
     </main>
