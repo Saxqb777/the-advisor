@@ -207,14 +207,14 @@ textarea:focus-visible {
   );
   background-repeat: no-repeat;
   background-position: 0 0.53em;
-  background-size: 0% 0.055em;
+  background-size: 0% 0.07em;
   transition:
     background-size 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     color 0.9s ease 0.45s;
 }
 
 .is-struck .confession {
-  background-size: 100% 0.055em;
+  background-size: 100% 0.07em;
 }
 
 .confession {
@@ -235,7 +235,7 @@ textarea:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .confession {
-    background-size: 0% 0.055em;
+    background-size: 0% 0.07em;
     transition: none;
   }
   .confession-row.is-struck .confession {

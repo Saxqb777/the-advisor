@@ -9,10 +9,14 @@ export const copy = {
   phone: "0545388662",
 
   hero: {
-    lines: ["Something in your business", "is taking too long."],
+    lines: ["You have something slow.", "I build the thing that fixes it."],
     // A phone is too narrow for that break, so it gets its own.
-    linesPhone: ["Something in your", "business is taking", "too long."],
-    under: "Tell me what it is. The first session is free.",
+    linesPhone: [
+      "You have something slow.",
+      "I build the thing",
+      "that fixes it.",
+    ],
+    under: "Yap about your problem for free. Leave the rest to me.",
     typing: "One line is enough. The real conversation happens in the session.",
     cta: { before: "Book a ", stress: "free", after: " session" },
   },

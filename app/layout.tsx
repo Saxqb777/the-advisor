@@ -19,7 +19,7 @@ const serif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "The Advisor",
   description:
-    "Something in your business is taking too long. Tell me what it is. The first session is free.",
+    "You have something slow. I build the thing that fixes it. Yap about your problem for free.",
 };
 
 export const viewport: Viewport = {
