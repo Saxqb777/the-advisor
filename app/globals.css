@@ -45,6 +45,12 @@ body {
   outline-offset: 3px;
 }
 
+/* Text fields show focus through their own rule going accent. */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
 /* ---------- film grain ---------- */
 
 .grain {
