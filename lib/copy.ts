@@ -17,6 +17,27 @@ export const copy = {
     cta: { before: "Book a ", stress: "free", after: " session" },
   },
 
+  // The confession. "I still" is set apart and repeats above every line.
+  still: "I still",
+  confessions: [
+    "build the same spreadsheet every Monday.",
+    "open three systems to answer one question.",
+    "find out I lost money a month after I lost it.",
+    "guess what I sold last week.",
+    "work Sunday to be ready for Monday.",
+    "take the laptop on holiday.",
+  ],
+  payoff: {
+    lines: [
+      "It can be done quicker.",
+      "It can be done cheaper.",
+      "I still do it the hard way.",
+    ],
+    why: "Why?",
+    because: "Because I never asked",
+    name: "The Advisor",
+  },
+
   read: [
     {
       lead: "You came here because something is slow.",

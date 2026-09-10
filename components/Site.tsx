@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Hero from "./Hero";
+import Confession from "./Confession";
 import Read from "./Read";
 import Path from "./Path";
 import Booking from "./Booking";
@@ -19,6 +20,7 @@ export default function Site() {
       </header>
 
       <Hero problem={problem} setProblem={setProblem} />
+      <Confession />
       <Read />
       <Path booked={booked} />
       <Booking

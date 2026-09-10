@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Adds a one way "it has arrived" flag once an element scrolls into view. */
-export function useInView<T extends HTMLElement>(threshold = 0.2) {
+export function useInView<T extends HTMLElement>(
+  threshold = 0.2,
+  rootMargin = "0px 0px -10% 0px",
+) {
   const ref = useRef<T | null>(null);
   const [inView, setInView] = useState(false);
 
@@ -18,12 +21,12 @@ export function useInView<T extends HTMLElement>(threshold = 0.2) {
           io.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -10% 0px" },
+      { threshold, rootMargin },
     );
 
     io.observe(el);
     return () => io.disconnect();
-  }, [threshold]);
+  }, [threshold, rootMargin]);
 
   return { ref, inView };
 }

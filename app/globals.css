@@ -193,3 +193,53 @@ textarea:focus-visible {
 .draw-rule.accent {
   background: var(--color-accent);
 }
+
+/* ---------- the confession ---------- */
+
+/* A red rule drawn through the line, one per wrapped row. */
+.confession {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(
+    var(--color-accent),
+    var(--color-accent)
+  );
+  background-repeat: no-repeat;
+  background-position: 0 0.53em;
+  background-size: 0% 0.055em;
+  transition:
+    background-size 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.9s ease 0.45s;
+}
+
+.is-struck .confession {
+  background-size: 100% 0.055em;
+}
+
+.confession {
+  color: var(--color-ink);
+}
+
+.confession-row.is-struck .confession {
+  color: rgba(23, 21, 15, 0.2);
+}
+
+.still-label {
+  transition: opacity 0.9s ease 0.45s;
+}
+
+.confession-row.is-struck .still-label {
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confession {
+    background-size: 0% 0.055em;
+    transition: none;
+  }
+  .confession-row.is-struck .confession {
+    color: var(--color-ink);
+    transition: none;
+  }
+}
