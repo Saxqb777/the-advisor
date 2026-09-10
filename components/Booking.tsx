@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
+import Letters from "./Letters";
 import Reveal from "./Reveal";
 import { copy } from "@/lib/copy";
 
@@ -66,8 +67,8 @@ export default function Booking({
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
-  const [sentAs, setSentAs] = useState<Preference | "email">("whatsapp");
   const note = useRef<HTMLTextAreaElement>(null);
+  const done = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = note.current;
@@ -75,6 +76,16 @@ export default function Booking({
     el.style.height = "auto";
     el.style.height = `${el.scrollHeight}px`;
   }, [problem]);
+
+  // Bring the moment into view once the form has folded away.
+  useEffect(() => {
+    if (!booked) return;
+    const id = setTimeout(
+      () => done.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
+      450,
+    );
+    return () => clearTimeout(id);
+  }, [booked]);
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -107,7 +118,6 @@ export default function Booking({
         }),
       });
       if (!response.ok) throw new Error("send failed");
-      setSentAs(channel === "email" ? "email" : preference);
       setBooked(true);
     } catch {
       setError(copy.form.errorSend);
@@ -291,16 +301,26 @@ export default function Booking({
           </div>
 
           <div
+            ref={done}
             className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               booked
-                ? "translate-y-0 opacity-100"
+                ? "is-in translate-y-0 opacity-100"
                 : "pointer-events-none h-0 translate-y-3 opacity-0"
             }`}
             aria-live="polite"
           >
-            <p className="font-display text-[clamp(1.75rem,4.2vw,2.75rem)] leading-[1.1]">
-              {copy.form.confirmation[sentAs]}
+            <p className="max-w-[22ch] font-display text-[clamp(1.625rem,3.6vw,2.5rem)] leading-[1.12]">
+              {copy.form.confirmation}
             </p>
+
+            <p className="mt-9 font-display text-[clamp(2.125rem,7.4vw,5rem)] leading-[1] tracking-[0.005em] text-accent md:mt-12">
+              <Letters text={copy.form.rally} start={420} />
+            </p>
+
+            <div
+              className="draw-rule accent mt-6"
+              style={{ ["--delay" as string]: "1100ms" }}
+            />
           </div>
         </div>
       </Reveal>

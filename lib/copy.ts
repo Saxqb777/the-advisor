@@ -60,11 +60,7 @@ export const copy = {
     errorEmail: "Add an email so I can reach you.",
     errorSend: "That did not send. Try again in a moment.",
     sending: "Sending",
-    // Changes with how they asked to be reached.
-    confirmation: {
-      whatsapp: "Got it. I will message you on WhatsApp to set a time.",
-      call: "Got it. I will call you to set a time.",
-      email: "Got it. I will email you to set a time.",
-    },
+    confirmation: "Your session is booked. You will be contacted.",
+    rally: "LET'S SOLVE THIS",
   },
 } as const;

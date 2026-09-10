@@ -183,3 +183,13 @@ textarea:focus-visible {
     animation: none;
   }
 }
+
+/* ---------- letters rising one at a time ---------- */
+
+.line-mask.inline {
+  display: inline-block;
+}
+
+.draw-rule.accent {
+  background: var(--color-accent);
+}
