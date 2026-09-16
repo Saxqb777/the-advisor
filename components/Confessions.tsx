@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { copy } from "@/lib/copy";
 
-const READ = 2600; // long enough to take it in
-const KILL = 1150; // the rule draws through
+const READ = 1900; // long enough to take it in
+const KILL = 1850; // the rule draws, then it sits there dead
 const CLEAR = 550; // it gets out of the way
 
 /**
