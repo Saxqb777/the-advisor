@@ -42,7 +42,7 @@ export default function Confessions() {
   if (holdStill) {
     return (
       <div>
-        <span className="mb-3 block text-label font-medium uppercase text-ink-40">
+        <span className="mb-3 block text-label font-medium uppercase text-ink-60">
           {copy.still}
         </span>
         <ul className="font-display text-[clamp(1.0625rem,2vw,1.375rem)] leading-[1.5]">
@@ -56,7 +56,7 @@ export default function Confessions() {
 
   return (
     <div className={phase === "live" ? "" : "is-struck"}>
-      <span className="mb-3 block text-label font-medium uppercase text-ink-40">
+      <span className="mb-3 block text-label font-medium uppercase text-ink-60">
         {copy.still}
       </span>
       <p

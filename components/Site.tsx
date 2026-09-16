@@ -15,7 +15,7 @@ export default function Site() {
 
   return (
     <main className="mx-auto w-full max-w-[1360px] px-6 md:px-10 lg:px-16">
-      <header className="pt-8 text-label font-medium uppercase text-ink-40">
+      <header className="pt-8 text-label font-medium uppercase text-ink-60">
         {copy.mark}
       </header>
 
@@ -32,11 +32,11 @@ export default function Site() {
 
       <footer className="mt-28 md:mt-40">
         <div className="h-px w-full bg-rule" />
-        <div className="flex items-baseline justify-between py-9 text-label font-medium uppercase text-ink-40">
+        <div className="flex items-baseline justify-between py-9 text-label font-medium uppercase text-ink-60">
           <span>{copy.mark}</span>
           <a
             href={`tel:${copy.phone}`}
-            className="transition-colors duration-300 hover:text-accent"
+            className="transition-[color] duration-300 hover:text-accent"
           >
             {copy.phone}
           </a>

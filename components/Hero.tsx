@@ -121,7 +121,7 @@ export default function Hero({
             </div>
 
             <p
-              className={`mt-4 max-w-[46ch] text-sm leading-[1.6] text-ink-40 transition-all duration-500 ${
+              className={`mt-4 max-w-[46ch] text-sm leading-[1.6] text-ink-60 transition-all duration-500 ${
                 written ? "translate-y-0 opacity-100" : "-translate-y-1 opacity-0"
               }`}
             >
@@ -135,7 +135,7 @@ export default function Hero({
           >
             <a
               href="#book"
-              className="group inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium tracking-[0.01em] text-paper transition-colors duration-300 hover:bg-accent"
+              className="group inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium tracking-[0.01em] text-paper transition-[background-color] duration-300 hover:bg-accent"
             >
               {copy.hero.cta.before}
               <span className="border-b-2 border-accent pb-[3px] transition-colors duration-300 group-hover:border-paper">

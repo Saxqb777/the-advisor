@@ -24,7 +24,7 @@ export default function Payoff() {
         ))}
 
         <p
-          className="rise mt-12 font-display text-[clamp(1.5rem,3.4vw,2.375rem)] leading-[1.15] text-ink-40 md:mt-16"
+          className="rise mt-12 font-display text-[clamp(1.5rem,3.4vw,2.375rem)] leading-[1.15] text-ink-60 md:mt-16"
           style={{ "--delay": "360ms" } as CSSProperties}
         >
           {copy.payoff.why}
@@ -44,7 +44,7 @@ export default function Payoff() {
         >
           <a
             href="#book"
-            className="group inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium tracking-[0.01em] text-paper transition-colors duration-300 hover:bg-accent"
+            className="group inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium tracking-[0.01em] text-paper transition-[background-color] duration-300 hover:bg-accent"
           >
             {copy.hero.cta.before}
             <span className="border-b-2 border-accent pb-[3px] transition-colors duration-300 group-hover:border-paper">

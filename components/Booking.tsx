@@ -9,7 +9,7 @@ import { copy } from "@/lib/copy";
 type Channel = "phone" | "email";
 type Preference = "whatsapp" | "call";
 
-const LABEL = "text-label font-medium uppercase text-ink-40";
+const LABEL = "text-label font-medium uppercase text-ink-60";
 const LINE =
   "peer block w-full bg-transparent pb-3 text-[clamp(1.0625rem,2.2vw,1.375rem)] leading-[1.4] text-ink caret-accent outline-none";
 
@@ -36,10 +36,10 @@ function Switch({
             role="radio"
             aria-checked={live}
             onClick={() => onChange(option.id)}
-            className={`-mb-px border-b-2 pb-2 text-[clamp(1.0625rem,2.2vw,1.375rem)] transition-colors duration-300 ${
+            className={`-mb-px border-b-2 pb-2 text-[clamp(1.0625rem,2.2vw,1.375rem)] transition-[border-color,color] duration-300 ${
               live
                 ? "border-accent text-ink"
-                : "border-transparent text-ink-40 hover:text-ink-60"
+                : "border-transparent text-ink-60 hover:text-ink"
             }`}
           >
             {option.text}
@@ -152,7 +152,7 @@ export default function Booking({
                 <div className="rise">
                   <label htmlFor="problem" className={LABEL}>
                     {copy.form.problemLabel}{" "}
-                    <span className="normal-case text-ink-20">
+                    <span className="normal-case text-ink-60">
                       {copy.form.optional}
                     </span>
                   </label>
@@ -264,7 +264,7 @@ export default function Booking({
                 >
                   <label htmlFor="name" className={LABEL}>
                     {copy.form.nameLabel}{" "}
-                    <span className="normal-case text-ink-20">
+                    <span className="normal-case text-ink-60">
                       {copy.form.optional}
                     </span>
                   </label>
@@ -281,7 +281,7 @@ export default function Booking({
                 <button
                   type="submit"
                   disabled={sending}
-                  className="rise mt-14 inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium text-paper transition-colors duration-300 hover:bg-accent disabled:opacity-60"
+                  className="rise mt-14 inline-block bg-ink px-8 py-4 text-[0.9375rem] font-medium text-paper transition-[background-color,opacity] duration-300 hover:bg-accent disabled:opacity-60"
                   style={{ ["--delay" as string]: "300ms" }}
                 >
                   {sending ? (
